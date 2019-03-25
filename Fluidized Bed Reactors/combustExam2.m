@@ -1,6 +1,5 @@
-function [ ] = combustExam2( input_args ) 
-%SECOND FILE For vandemeter question 
-%code to dimension a FCC combustor 
+function [ ] = combustExam2(Ht,u0,L,dt,T,Cb) 
+% code to dimension a FCC combustor 
 % algorithm:
 % -solve O2 balance with gues value for Cc (mol C per kg / catalyst)
 % -compute the coke balance

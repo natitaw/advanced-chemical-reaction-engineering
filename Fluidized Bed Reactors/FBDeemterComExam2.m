@@ -1,5 +1,4 @@
 function [x,O2b,O2d,balC]=FBDeemterComExam2(Ht,u0,L,dt,T,Cb,Cc)
-%FIRST FILE for question with vandemeter model
 % function solves the oxygen mass balance using the van deemter model
 % Cb = C in bubble, Cd = C in dense
 % derivaties to theta (x/L) demennsioneless lenght of the reactor

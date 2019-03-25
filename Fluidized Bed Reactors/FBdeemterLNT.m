@@ -1,4 +1,4 @@
-function [X, Xpfr, Xcstr]=FBdeemterLNT
+function []=FBdeemterLNT
 % This code solves the Van Deemter BFB model for a first order reaction and
 % under the assumption that there is no flow going through the dense phase.
 % The following euguations are solved:
@@ -28,7 +28,7 @@ Cbin=1;
 
 
 % calling the solution
-solinit = bvpinit(linspace(0,1),[1 0 1]);
+solinit = bvpinit(linspace(0,1),[1 0 1]); %I don't know what this is
 sol = bvp4c(@f,@mat4bc,solinit);
 x = linspace(0,1)';
 y = deval(sol,x)';
@@ -60,17 +60,17 @@ eta = X/Xpfr               % gas-solid contacting
     % Cbubble = y(3)
         
         
-        dydx = [   y(2)     
-            -Nt*NE*(y(3)-y(1))+Nr*NE*y(1)
-               -Nt*(y(3)-y(1)) ]; 
+        dydx = [         y(2) 
+                -Nt*NE*(y(3)-y(1))+Nr*NE*y(1)
+                -Nt*(y(3)-y(1))]; 
     end
   
 
     function res = mat4bc(ya,yb)
     
-        res = [ ya(2)
-            yb(2)
-              ya(3)-Cbin ];
+        res = [  ya(2)
+                 yb(2) 
+                 ya(3)-Cbin]; %I don't know what this is
     end
  
 
